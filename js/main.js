@@ -4,7 +4,7 @@ if (document.getElementById("app")) {
     createApp ({
         data() {
             return {
-                url: "https://monicadcv.mysql.pythonanywhere-services.com/productos",
+                url: "https://monicadcv.pythonanywhere.com/productos/",
                 productosAll: [],
                 productos: [],
                 errored: false,
@@ -42,7 +42,7 @@ if (document.getElementById("app")) {
                 this.productos = this.productosAll
             },
             eliminar(producto) {
-                const url = 'https://monicadcv.mysql.pythonanywhere-services.com/productos/' + producto;
+                const url = 'https://monicadcv.pythonanywhere.com/productos/' + producto;
                 var options = {
                     method: 'DELETE',
                 }
@@ -53,7 +53,7 @@ if (document.getElementById("app")) {
                     })                    
                     console.log("eliminado")
                     alert("Se eliminará este producto")
-                    window.location.href = "./productos.html";  //NUEVO 
+                    window.location.href = "./index.html";  //NUEVO 
                     },
             filtro() {
                 this.productos = this.productosAll.filter( producto=>(producto.categoria == this.categoria || this.categoria==="All") && (producto.precio == this.precio || this.precios==="All" ))                

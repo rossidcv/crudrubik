@@ -28,7 +28,7 @@ function modificar() {
         precio: p,
         foto: f,
     }
-    let url = "https://monicadcv.mysql.pythonanywhere-services.com/productos/"+id
+    let url = "https://monicadcv.pythonanywhere.com/productos/"+id
     var options = {
         body: JSON.stringify(producto),
         method: 'PUT',
@@ -39,7 +39,7 @@ function modificar() {
         .then(function () {
             console.log("modificado")
             alert("Registro modificado")
-            window.location.href = "./productos.html";  //NUEVO 
+            window.location.href = "./index.html";  //NUEVO 
         })
         .catch(err => {
             //this.errored = true
