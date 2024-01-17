@@ -4,7 +4,7 @@ if (document.getElementById("app")) {
     createApp ({
         data() {
             return {
-                url: "https://monicadcv.pythonanywhere.com/productos/",
+                url: "https://monicadcv.pythonanywhere.com/productos",
                 productosAll: [],
                 productos: [],
                 errored: false,
