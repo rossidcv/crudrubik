@@ -349,6 +349,7 @@
 	background-color:#fcf9f9;
 	table-layout: fixed;
   width: 100%;  
+  margin: 0;
 }
 .table>thead {
 	background-color: #e6007e;
@@ -363,6 +364,9 @@
 	font-weight: 600 !important;
 	text-align: center;
 	border-bottom: 1px solid #e6007e;
+}
+.img-tabla {
+  width: 90px;
 }
 
 /*MODIFICAR PRODUCTO*/ 
@@ -484,7 +488,25 @@
   .fondo-crear-modificar form {  
     width: 100%; 
   }
+  .btn-editar, 
+  .btn-danger {
+    font-size: 12px;
+  }
+  .table td,
+  .table th {
+    font-size: 12px;
+  }  
+  .table .titulo-tabla {
+    font-size: 10px;
+  }
 }
+
+@media (max-width: 776px) {
+  .img-tabla {
+    width: 50px;
+  }
+}
+
 @media (max-width: 576px) {
   #app {
     position: relative;
@@ -500,7 +522,13 @@
     position: relative;
     top: 20px;
   }
-}
-
-@media (max-width: 480px) {  
+  .table .titulo-tabla {
+    font-size: 7px;
+  }
+  .img-tabla {
+    width: 30px;
+  }
+  .hola {
+    width: 50%;
+  }
 }
