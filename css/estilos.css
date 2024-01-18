@@ -310,16 +310,16 @@
 	font-family: "Lato", sans-serif;
   font-size: 14px;
   position: relative;
-  margin: 0 auto;
-  padding: 10px;
-  margin-bottom: 5px;
+  padding: 10px 20px;
+  margin: 0 auto 5px auto;   
   border-color: transparent;
   border-radius: 50px;
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 0.5px;
   font-weight: 500;
-  width: 100%;
+  display: block;
+  width: max-content;
 }
 .btn-editar:hover {
 	background-color: rgb(13,110,253,0.7) !important;
@@ -339,7 +339,7 @@
   text-align: center;
   letter-spacing: 0.5px;
   font-weight: 500;  
-  width: 100%;
+  width: auto;
 }
 .btn-editar:hover {
 	background-color: rgb(13,110,253,0.7) !important;
