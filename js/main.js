@@ -5,14 +5,14 @@ if (document.getElementById("app")) {
         data() {
             return {
                 url: "https://monicadcv.pythonanywhere.com/productos",
-                productosAll: [],
+                productosTodos: [],
                 productos: [],
                 errored: false,
                 loading: true,
                 categorias:[],
                 precios: [],
-                categoria: "All",
-                precio: "All"
+                categoria: "Todos",
+                precio: "Todos"
             }
         },
         methods: {
@@ -38,8 +38,8 @@ if (document.getElementById("app")) {
                     this.errored = true
                 })
                 resp = await fetch(url)
-                this.productosAll = await resp.json() 
-                this.productos = this.productosAll
+                this.productosTodos = await resp.json() 
+                this.productos = this.productosTodos
             },
             eliminar(producto) {
                 const url = 'https://monicadcv.pythonanywhere.com/productos/' + producto;
@@ -50,26 +50,24 @@ if (document.getElementById("app")) {
                     .then(res => res.text()) // or res.json()
                     .then(res => {
                         location.reload();
-                    })                    
-                    console.log("eliminado")
-                    alert("Se eliminará este producto")
-                    window.location.href = "./index.html";  //NUEVO 
-                    },
+                    })
+            },
             filtro() {
-                this.productos = this.productosAll.filter( producto=>(producto.categoria == this.categoria || this.categoria==="All") && (producto.precio == this.precio || this.precios==="All" ))                
+                this.productos = this.productosTodos.filter( producto=>(producto.categoria == this.categoria || this.categoria==="Todos") && (producto.precio == this.precio || this.precio==="Todos" ))                
             },
             orden() {
-                this.productos.sort((a, b)  => { return (a < b ?  1 : -1) } ) // Output: [5, 10, 30, 100]// si retorna 1 lo invierte, si retorna -1 lo deja como esta 
+                this.productos.sort((a, b) => { return (a.precio > b.precio ? 1 : -40) } )// si retorna 1 lo invierte, si retorna -1 lo deja como esta 
             },
+
             cargarListasDesplegables() {
-                this.categorias =['All']
-                this.precios = ['All']
-                for (producto of this.productosAll) {
+                this.categorias =['Todos']
+                this.precios = ['Todos']
+                for (producto of this.productosTodos) {
                   if (producto.categoria !== '' && this.categorias.indexOf(producto.categoria) < 0) {
-                    this.categoria.push(producto.categoria)
+                    this.categorias.push(producto.categoria)
                   }
                   if (producto.precio !== '' && this.precios.indexOf(producto.precio) < 0) {
-                    this.precio.push(producto.precio)
+                    this.precios.push(producto.precio)
                   }
                 }
             }

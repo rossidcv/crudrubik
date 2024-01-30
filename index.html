@@ -6,14 +6,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Lista de productos</title>
 	<!-- Favicon -->
-  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+	<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700;800&display=swap" rel="stylesheet">
-	<link href="https: //fonts.googleapis.com/css2? family= Varela+Ronda & display=swap" rel="stylesheet">
-	<link href="https: //fonts.googleapis.com/css2? familia= Lato:wght@300;400;700 & display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
 	<!-- JS -->
-	<src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>    
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>    
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
 	<!-- CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
@@ -22,69 +22,69 @@
 <body>    
 	<main>
 		<div class="fondo-encabezado">
-      <div class="encabezado-contenedor">
-        <div class="container">
-          <div class="row">            
-            <div class="text-center">
-              <h4><span>NUESTROS PRODUCTOS</span></h4>
-            </div><!-- cierra text-center--> 
-          </div><!-- cierra row-->
-        </div><!-- cierra container-->
-        <svg xmlns="http://www.w3.org/2000/svg" class="dotted-circle" width="352" height="352" overflow="visible">
-          <circle cx="176" cy="176" r="174" fill="none" stroke="#fff" stroke-width="2" stroke-miterlimit="10" stroke-dasharray="12.921,11.9271"/>
-        </svg>
-      </div><!-- cierra encabezado-contenedor-->
-    </div><!-- cierra fondo-encabezado -->
+			<div class="encabezado-contenedor">
+				<div class="container">
+					<div class="row">            
+						<div class="text-center">
+							<h4><span>NUESTROS PRODUCTOS</span></h4>
+						</div><!-- cierra text-center--> 
+					</div><!-- cierra row-->
+				</div><!-- cierra container-->
+				<svg xmlns="http://www.w3.org/2000/svg" class="dotted-circle" width="352" height="352" overflow="visible">
+					<circle cx="176" cy="176" r="174" fill="none" stroke="#fff" stroke-width="2" stroke-miterlimit="10" stroke-dasharray="12.921,11.9271"/>
+				</svg>
+			</div><!-- cierra encabezado-contenedor-->
+		</div><!-- cierra fondo-encabezado -->
 
 		<div class="fondo-nuestrosproductos">      
 			<div id="app">
-			<div class="container my-4">        
-				<a  class="btn btn-nuevo" href="crear-producto.html">Cargar Nuevo producto</a>
-				<br><br>
-				<div v-if="error">
-					<p>Lo sentimos, no es posible obtener la información en este momento, por favor intente nuevamente mas tarde</p>
-				</div>
-				<div v-else>
-					<section v-if="cargando">
-						<div class="spinner-border"></div>
-						<p>Cargando ...</p>
-					</section>
-					<section v-else>
-						<div class="table-responsive">
-							<table class="table table-bordered table-striped">
-								<thead>
-									<tr>
-										<th scope="col" class="titulo-tabla">Id</th>
-										<th scope="col" class="titulo-tabla">Nombre</th>
-										<th scope="col" class="titulo-tabla">Detalle</th>
-										<th scope="col" class="titulo-tabla">Categoria</th>
-										<th scope="col" class="titulo-tabla">Precio</th>
-										<th scope="col" class="titulo-tabla">Foto</th><th scope="col"></th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr class="" v-for="producto in productos">
-										<td scope="row" class="hola">{{producto.id}}</td>
-										<td>{{producto.nombre}}</td>
-										<td>{{producto.detalle}}</td>
-										<td>{{producto.categoria}}</td>
-										<td>{{producto.precio}}</td>                                    
-										<td>
-											<img class="img-tabla" :src="producto.foto" :alt="producto.precio">
-										</td>
-										<td>
-											<a class="btn btn-editar" :href="'modificar-producto.html?id='+producto.id+'&nombre='+producto.nombre+'&detalle='+producto.detalle+'&categoria='+producto.categoria+'&precio='+producto.precio+'&foto='+producto.foto" >Editar</a>
-											<button type="button" class="btn btn-danger" v-on:click="eliminar(producto.id)" >Eliminar</button>
-										</td>
-									</tr>
-								</tbody>
-							</table>
-						</div><!-- cierra table-responsive -->
-					</section>
-				</div><!--cierra v-else -->
-			</div><!--cierra container -->
-		</div><!--cierra app -->
-	</div><!--cierra fondo-nuestrosproductos -->
+				<div class="container my-4">        
+					<a  class="btn btn-nuevo" href="crear-producto.html">Cargar Nuevo producto</a>
+					<br><br>
+					<div v-if="error">
+						<p>Lo sentimos, no es posible obtener la información en este momento, por favor intente nuevamente mas tarde</p>
+					</div>
+					<div v-else>
+						<section v-if="cargando">
+							<div class="spinner-border"></div>
+							<p>Cargando ...</p>
+						</section>
+						<section v-else>
+							<div class="table-responsive">
+								<table class="table table-bordered table-striped">
+									<thead>
+										<tr>
+											<th scope="col" class="titulo-tabla">Id</th>
+											<th scope="col" class="titulo-tabla">Nombre</th>
+											<th scope="col" class="titulo-tabla">Detalle</th>
+											<th scope="col" class="titulo-tabla">Categoria</th>
+											<th scope="col" class="titulo-tabla">Precio</th>
+											<th scope="col" class="titulo-tabla">Foto</th><th scope="col"></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr class="" v-for="producto in productos">
+											<td scope="row" class="hola">{{producto.id}}</td>
+											<td>{{producto.nombre}}</td>
+											<td>{{producto.detalle}}</td>
+											<td>{{producto.categoria}}</td>
+											<td>{{producto.precio}}</td>                                    
+											<td>
+												<img class="img-tabla " :src="producto.foto" :alt="producto.precio">
+											</td>
+											<td>
+												<a class="btn btn-editar" :href="'modificar-producto.html?id='+producto.id+'&nombre='+producto.nombre+'&detalle='+producto.detalle+'&categoria='+producto.categoria+'&precio='+producto.precio+'&foto='+producto.foto" >Editar</a>
+												<button type="button" class="btn btn-danger" v-on:click="eliminar(producto.id)" >Eliminar</button>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div><!-- cierra table-responsive -->
+						</section>
+					</div><!--cierra v-else -->
+				</div><!--cierra container -->
+			</div><!--cierra app -->
+		</div><!--cierra fondo-nuestrosproductos -->
 	</main>
 
 	<!--Link de VUE-->
