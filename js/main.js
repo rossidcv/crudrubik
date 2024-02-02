@@ -4,7 +4,7 @@ if (document.getElementById("app")) {
     createApp ({
         data() {
             return {
-                url: "http://www.rubiksublimaciones.com.ar/productos.html",
+                url: "https://monicadcv.pythonanywhere.com/productos",
                 productosTodos: [],
                 productos: [],
                 errored: false,
@@ -42,7 +42,7 @@ if (document.getElementById("app")) {
                 this.productos = this.productosTodos
             },
             eliminar(producto) {
-                const url = 'http://www.rubiksublimaciones.com.ar/productos.html/' + producto;
+                const url = 'https://monicadcv.pythonanywhere.com/productos/' + producto;
                 var options = {
                     method: 'DELETE',
                 }
